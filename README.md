@@ -46,6 +46,17 @@ Required changes
   --accent-1: blue;
 }
 
+/* ===== Position ===== */
+.p-r {
+  position: relative;
+}
+.p-a {
+  position: absolute;
+}
+.p-f {
+  position: fixed;
+}
+
 /* ===== Display ===== */
 .d-fx {
   display: flex;
