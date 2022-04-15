@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+  <link rel="stylesheet" href="/styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+  <script src="/app.js" defer></script>
+  <title>Class Sample</title>
+</head>
+<body ng-controller="classSystem">
+  <html class='m-0 p-0 h100 w100'>
+  <body class='bb bg-b5 m-0 p-0'>
+  <!--! Nav -->
+    <div class='d-f bg-b5 jc-sb'> 
+      <h1 class='reg c-t1 m-0 p-10 pl-20'>My Account</h1>
+      <div class='d-f ai-c pr-20'>
+        <div class='c-t4 pr-20 fs-18' ng-repeat='icon in data.icons'>
+          <i class="{{icon}} line icon"></i>
+        </div>
+        <img width="30" class="br-50pc" src="https://www.vhv.rs/dpng/d/426-4263064_circle-avatar-png-picture-circle-avatar-image-png.png"/>
+      </div>
+    </div>
+
+  <!--! Sec Nav -->
+    <div class='bg-b4 d-f ai-c c-t1' > 
+      <div class='pl-10 p-8 br-1d1'>
+        <i class="compass icon"></i>
+      </div>
+      <div class='p-8 pr-20 pl-20 br-1d1' ng-repeat='server in data.servers'>
+        {{server}}
+      </div>
+      <div class='p-8'>
+        <i class="plus icon"></i>
+      </div>
+    </div>
+
+  <!--! Main View -->
+    <div class='h100 d-f'>
+      <!--! Side Panel -->
+      <div class='bg-b4 h100 w20'>
+        <div class='bb-1d1 m-15'>
+          <h2 class='reg c-t1 m-0 p-10 pl-20'>SETTINGS</h2>
+          <h4 class='bold p-8 pl-20 m-0' ng-repeat='settings in data.settingsOptions' ng-class='$first ? "c-b2 bg-a2 br-5" : "c-t1 br-5"'>
+            {{settings}}
+          </h4>
+        </div>
+        <div class='bb-1d1 m-15'>
+          <h2 class='reg c-t1 m-0 p-10 pl-20'>SUBSCRIPTION</h2>
+          <h4 class='bold p-8 pl-20 c-t1 br-5 m-0' ng-repeat='subs in data.subscription'>
+            {{subs}}
+          </h4>
+        </div>
+        <div class='m-15'>        
+          <h2 class='reg m-0 p-10 pl-20 c-e2'>LOG OUT</h2>
+        </div>
+      </div>
+      <!-- Account Settings -->
+      <div class='h100 w80 d-f jc-c ai-c'>
+        <div class='bg-b4 w80 h80'>
+          <div class='d-f ai-c bg-b5'>
+            <div class='p-10 pr-20 pl-20' ng-repeat='option in ["Account Settings", "Social Media Links", "Change Password"]' ng-class='$first ? "bg-b4 c-a1" : "bg-b6 c-t1"'>
+              {{option}}
+            </div>
+          </div>
+          <div class='bg-b4 w100 d-f jc-c'>
+            <div class='w80 d-f jc-c ai-c fd-c bb-1d1'>
+              <div class='c-t1 p-10 pt-20'>Account Settings</div>
+              <img width="150" class="br-50pc p-10" src="https://www.vhv.rs/dpng/d/426-4263064_circle-avatar-png-picture-circle-avatar-image-png.png"/>
+              <h5 class='bold c-t6 br-5 p-3 b-1d1 bg-b6 m-0'>Upload Profile Photo</h5>
+              <h4 class='bold c-t6 br-5 p-5 m-0 pb-20'>Maximum image size is 512 x 512 px.</h4>
+            </div>
+          </div>
+          <div class="w100 d-f jc-c pt-20">
+            <div class='w50'>
+              <div class='p-p p-10' ng-repeat='(key, user) in data.userData'>
+                <input type="text" tabindex="1" placeholder=" " class="p-10 pr-15 pl-15 b-1d1 bg-b4 br-5 c-t1 b-f1a2 mw400" value="{{user}}" required>
+                <label for="name" class='c-t6 fs-10 t-20 p-a l-20 bg-b4 p-v5' required>
+                  {{key}}
+                </label>
+              </div>
+            </div>
+            <div class='w50'>
+              <div class='p-p p-10' ng-repeat='user in ["Bio", "Personal Quote"]'>
+                <input type="text" tabindex="1" placeholder=" " class="p-10 pr-15 pl-15 b-1d1 bg-b4 br-5 c-t1 b-f1a2 mw400 h125" required>
+                <label for="name" class='c-t6 fs-10 t-20 p-a l-20 bg-b4 p-v5' required>
+                  {{user}}
+                </label>
+              </div>
+
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+</body>
+</html>

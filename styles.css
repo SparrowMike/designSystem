@@ -1,3 +1,20 @@
+* {
+  outline: none;
+}
+::selection {
+  color: var(--background-2) !important;
+  background: var(--accent-2) !important;
+}
+
+input:focus ~ label {
+  color: var(--accent-2);
+}
+
+input:focus ~ label,
+input:not(:placeholder-shown) ~ label {
+  transform: translateY(-20px)
+}
+
 body {
   width: 100%;
   height: 100%;
@@ -9,6 +26,7 @@ body {
   --success-1: rgb(64, 146, 95);
   --success-2: rgb(80, 170, 119);
   --success-3: rgb(167, 213, 187);
+
   --error-1: rgb(176, 65, 65);
   --error-2: rgb(235, 87, 87);
   --error-3: rgb(245, 171, 171);
@@ -76,6 +94,23 @@ body {
   display: flex;
 }
 
+/* ===== Position ===== */
+.p-p {
+  position: relative;
+}
+.p-a {
+  position: absolute;
+}
+.t-10 {
+  top: 10px;
+}
+.t-20 {
+  top: 20px;
+}
+.l-20 {
+  left: 20px
+}
+
 /* ====== Flex ====== */
 .fd-c{
   flex-direction: column;
@@ -130,11 +165,26 @@ body {
 .pr-10 {
   padding-right: 10px;
 }
+.pl-15 {
+  padding-left: 15px;
+}
+.pr-15 {
+  padding-right: 15px;
+}
 .pl-20 {
   padding-left: 20px;
 }
 .pr-20 {
   padding-right: 20px;
+}
+.pb-20 {
+  padding-bottom: 20px;
+}
+.pt-20 {
+  padding-top: 20px;
+}
+.p-v5 {
+  padding: 0 5px;
 }
 
 /*  ======== Border ======= */
@@ -144,9 +194,11 @@ body {
 .br-1d1 {
   border-right: 1px solid var(--divider-lines-1)
 }
-
-.bd-1d1 {
+.bb-1d1 {
   border-bottom: 1px solid var(--divider-lines-1)
+}
+.b-f1a2:focus {
+  border: 1px solid var(--accent-2);
 }
 
 /*  ===== Border Radius ===== */
@@ -165,7 +217,7 @@ body {
   margin: 15px;
 }
 
-/* ==== Font-Size ==== */
+/* ==== Font-Size Headers ==== */
 h1.reg {
   font-size: 18px;
   font-weight: 400;
@@ -182,6 +234,12 @@ h5.bold {
   font-size: 11px;
   font-weight: 700;
 }
+.fs-10 {
+  font-size: 10px; 
+}
+.fs-18 {
+  font-size: 18px; 
+}
 
 /* ==== Height ==== */
 .h50 {
@@ -193,6 +251,9 @@ h5.bold {
 .h100 {
   height: 100%;
 }
+.h125 {
+  height: 125px;
+}
 
 /* ==== Width ==== */
 .w20 {
@@ -203,4 +264,7 @@ h5.bold {
 }
 .w100 {
   width: 100%;
+}
+.mw400 {
+  min-width: 400px;
 }
